@@ -18,7 +18,7 @@
   font-size: 3.2rem;
   width: 12rem;
   border-radius: 0.8rem;
-  border: 0.1rem solid $color-accent;
+  border: 1px solid $color-accent;
   text-align: center;
   padding: 0.4rem;
 
@@ -35,11 +35,11 @@
   &:focus,
   &:hover {
     background-color: rgb($color-primary, 0.08);
-    border: 0.1rem solid $color-primary;
+    border: 1px solid $color-primary;
   }
 
   &--red {
-    border: 0.1rem solid $color-red;
+    border: 1px solid $color-red;
     color: $color-red;
   }
 }

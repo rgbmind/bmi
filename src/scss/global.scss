@@ -42,9 +42,12 @@ html {
     font-size: 25%;
   }
   @include respondMax($phone-small) {
-    font-size: 19%;
+    font-size: 18%;
   }
   @include respondMax($phone-tiny) {
-    font-size: 18%;
+    font-size: 16%;
+  }
+  @include respondMax($samsung-fold) {
+    font-size: 13%;
   }
 }
