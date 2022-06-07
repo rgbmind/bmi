@@ -1,7 +1,17 @@
+@use '../../scss/mixins' as *;
+
 .bmi-form-container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  margin-bottom: 15rem;
+  margin-bottom: 5rem;
+
+  @include respondMax($tab-port) {
+    margin-bottom: 20rem;
+  }
+
+  @include respondMax($phone) {
+    margin-bottom: 25rem;
+  }
 }

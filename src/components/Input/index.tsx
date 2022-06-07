@@ -83,7 +83,7 @@ const Input: React.FC<inputProps> = ({
         readOnly={readOnly}
       />
       <label className={`bmi-input-label ${errClassLabel}`} htmlFor='gender'>
-        {errLabel}
+        {name === 'gender' ? 'Gender' : errLabel}
       </label>
     </div>
   );
