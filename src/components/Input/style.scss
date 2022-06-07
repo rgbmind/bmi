@@ -23,8 +23,9 @@
   padding: 0.4rem;
 
   &-label {
-    font-size: 1.6rem;
-    color: tint-or-shade($color-grey, 0.5);
+    font-size: 1.8rem;
+    letter-spacing: 1.2;
+    color: tint-or-shade($color-grey, 0.8);
 
     &--red {
       color: $color-red;
