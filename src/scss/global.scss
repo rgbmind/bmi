@@ -33,13 +33,13 @@ html {
     font-size: 45%;
   }
   @include respondMax($nest-hub) {
-    font-size: 36%;
+    font-size: 30%;
   }
   @include respondMax($tab-port) {
-    font-size: 35%;
+    font-size: 30%;
   }
   @include respondMax($phone) {
-    font-size: 25%;
+    font-size: 20%;
   }
   @include respondMax($phone-small) {
     font-size: 18%;
