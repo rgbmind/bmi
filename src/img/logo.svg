@@ -1,1 +1,24 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="100%" height="100%" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g><path d="M481,56.091c-0,-13.848 -11.243,-25.091 -25.091,-25.091l-399.818,0c-13.848,0 -25.091,11.243 -25.091,25.091l-0,399.818c-0,13.848 11.243,25.091 25.091,25.091l399.818,0c13.848,0 25.091,-11.243 25.091,-25.091l-0,-399.818Z" style="fill:#00c9b7;"/><g><g><g><g><circle cx="389.118" cy="175.604" r="30" style="fill:#fff;"/></g></g><text x="357.571px" y="198.547px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:79.37px;fill:#00c9b7;">+</text></g><text x="74.23px" y="366.396px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:200px;fill:#fff;">BMI</text></g></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g>
+        <g transform="matrix(2.1327,0,0,2.61628,-18.0521,-246.326)">
+            <path d="M234,115.59C234,110.297 228.728,106 222.235,106L34.765,106C28.272,106 23,110.297 23,115.59L23,268.41C23,273.703 28.272,278 34.765,278L222.235,278C228.728,278 234,273.703 234,268.41L234,115.59Z" style="fill:rgb(0,201,183);"/>
+        </g>
+        <g transform="matrix(1,0,0,1,-5.64697,38.8135)">
+            <g transform="matrix(1,0,0,1,-0.235352,-7.20898)">
+                <g transform="matrix(0.967742,0,0,1.01695,76.6129,9.25424)">
+                    <g>
+                        <ellipse cx="329" cy="132.5" rx="31" ry="29.5" style="fill:white;"/>
+                    </g>
+                </g>
+                <g transform="matrix(0.714327,0,0,0.714327,125.583,64.0798)">
+                    <path d="M373.148,144L373.148,115.897L345.044,115.897L345.044,107.867L373.148,107.867L373.148,79.764L381.177,79.764L381.177,107.867L409.28,107.867L409.28,115.897L381.177,115.897L381.177,144L373.148,144Z" style="fill:rgb(0,201,183);fill-rule:nonzero;"/>
+                </g>
+            </g>
+            <g transform="matrix(1,0,0,1,-59.9571,110.31)">
+                <text x="139.834px" y="217.272px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:200px;fill:white;">BMI</text>
+            </g>
+        </g>
+    </g>
+</svg>
