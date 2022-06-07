@@ -1,0 +1,61 @@
+//FUNCTIONS
+
+/* tint-or-shade()
+
+The function adds tint or shade to the provided color.
+
+Varaibles
+1. $color - color that will be transformed
+2. $factor - multiplication factor from 0 to 1; default value is 1;
+3. $tintorshade - accepts 'tint' or 'shade' values; default value is 'shade'
+
+*/
+
+@function tint-or-shade($color, $factor: 1, $tintorshade: shade) {
+  $red: red($color);
+  $green: green($color);
+  $blue: blue($color);
+
+  @if ($factor < 0) {
+    $factor: 0;
+  }
+
+  @if ($factor > 1) {
+    $factor: 1;
+  }
+
+  @if ($tintorshade == shade) {
+    @return rgb($red * $factor, $green * $factor, $blue * $factor);
+  }
+  @if ($tintorshade == tint) {
+    @return rgb(
+      $red + (255 - $red) * $factor,
+      $green + (255 - $green) * $factor,
+      $blue + (255 - $blue) * $factor
+    );
+  }
+}
+
+// Adding transparency factor to the color
+@function transparency($color, $factor) {
+  $red: red($color);
+  $green: green($color);
+  $blue: blue($color);
+
+  @return rgb($red, $green, $blue, $factor);
+}
+
+// COLORS PALLETE
+
+// COLOR PRIMARY
+$color-primary: rgb(121, 80, 242);
+// COLOR ACCENT
+$color-accent: #00c9b7;
+// COLOR GREY
+$color-grey: #adb5bd;
+// COLOR WHITE
+$color-white: white;
+// COLOR ORANGE
+$color-orange: orange;
+// COLOR RED
+$color-red: orangered;

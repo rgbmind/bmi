@@ -1,0 +1,45 @@
+@use '../../scss/colors' as *;
+
+.input-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 50%;
+  border: 1.2rem solid $color-accent;
+  text-align: center;
+  background-color: $color-white;
+}
+
+.bmi-input {
+  font-size: 3.2rem;
+  width: 12rem;
+  border-radius: 0.8rem;
+  border: 0.1rem solid $color-accent;
+  text-align: center;
+  padding: 0.4rem;
+
+  &-label {
+    font-size: 1.6rem;
+    letter-spacing: 1.2;
+    color: tint-or-shade($color-grey, 0.95);
+
+    &--red {
+      color: $color-red;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    background-color: rgb($color-primary, 0.08);
+    border: 0.1rem solid $color-primary;
+  }
+
+  &--red {
+    border: 0.1rem solid $color-red;
+    color: $color-red;
+  }
+}

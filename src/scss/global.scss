@@ -1,0 +1,50 @@
+@use 'colors' as *;
+@use 'mixins' as *;
+@use 'fonts' as *;
+
+// GLOBAL CSS RESET
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// FOCUS RESET WITH DEFAULT COLOR VALUEs
+
+*:focus {
+  outline: none;
+}
+
+// BASE FONT SIZE & SMOOTH SCROLLING
+html {
+  font-size: 62.5%;
+  font-family: $font;
+  scroll-behavior: smooth;
+
+  //MEDIA QUERIES
+
+  @include respondMax($desktop-uhd) {
+    font-size: 80%;
+  }
+  @include respondMax($desktop-fhd) {
+    font-size: 60%;
+  }
+  @include respondMax($tab-land) {
+    font-size: 45%;
+  }
+  @include respondMax($nest-hub) {
+    font-size: 36%;
+  }
+  @include respondMax($tab-port) {
+    font-size: 35%;
+  }
+  @include respondMax($phone) {
+    font-size: 25%;
+  }
+  @include respondMax($phone-small) {
+    font-size: 19%;
+  }
+  @include respondMax($phone-tiny) {
+    font-size: 18%;
+  }
+}

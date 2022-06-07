@@ -1,0 +1,33 @@
+@use '../../scss/colors' as *;
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  background-position: bottom;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: background-image 0.3s;
+  transition: background-image 0.3s;
+
+  &--female {
+    background-image: linear-gradient(
+        to bottom,
+        rgb($color-primary, 0.4),
+        rgb($color-primary, 0.4)
+      ),
+      url(../../img/bmi-hero-female-uhd.jpg);
+  }
+
+  &--male {
+    background-image: linear-gradient(
+        to bottom,
+        rgb($color-primary, 0.4),
+        rgb($color-primary, 0.4)
+      ),
+      url(../../img/bmi-hero-male-uhd.jpg);
+  }
+}

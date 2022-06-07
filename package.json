@@ -1,0 +1,25 @@
+{
+  "name": "bmi-calculator",
+  "version": "1.0.0",
+  "description": "The Body Mass Index (BMI) calculator",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "author": "Maciej Tomaszewski (rgbmind)",
+  "license": "MIT",
+  "devDependencies": {
+    "@parcel/packager-raw-url": "^2.6.0",
+    "@parcel/transformer-sass": "^2.6.0",
+    "@parcel/transformer-webmanifest": "^2.6.0",
+    "@types/react": "^18.0.10",
+    "@types/react-dom": "^18.0.5",
+    "parcel": "^2.6.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
+}

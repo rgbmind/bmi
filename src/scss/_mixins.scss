@@ -1,0 +1,53 @@
+/* 
+
+** MEDIA QUERY MANAGER **
+
+NOTE:
+In media queries rem and em units DO NOT depend on html {font-size: 62.5%}.
+Instead 1rem = 1em = 16px */
+
+// Breakpoints
+
+$phone-tiny: 380px;
+$phone-small: 420px;
+$phone: 600px;
+$tab-port: 900px;
+$nest-hub: 1024px;
+$tab-land: 1300px;
+$desktop-fhd: 1920px;
+$desktop-uhd: 3840px;
+
+// Media query manager
+
+// Desktop First
+@mixin respondMax($breakpoint) {
+  @media (max-width: calc($breakpoint / 16px * 1em)) {
+    @content;
+  }
+}
+
+// Mobile First
+@mixin respondMin($breakpoint) {
+  @media (min-width: calc($breakpoint/16px * 1em)) {
+    @content;
+  }
+}
+
+// Loading hi-res pictures based on minimum resolution
+// and minimum width that comes as a parameter
+
+@mixin hirespic($width) {
+  @media (min-resolution: 192dpi) and (min-width: $width) {
+    @content;
+  }
+}
+
+/*
+
+** SET FOCUS COLOR
+
+*/
+
+@mixin focus-color($outline-color) {
+  box-shadow: 0 0 0 0.6rem $outline-color;
+}
