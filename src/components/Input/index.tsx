@@ -27,11 +27,11 @@ const Input: React.FC<inputProps> = ({
 }) => {
   // INPUT ERROR HANDLING
 
-  // Age range
   let errLabel = '';
   let errClassInput = '';
   let errClassLabel = '';
 
+  // Age range
   if (name === 'age') {
     if (value > data.longestAge || value < 1) {
       errLabel = `1 - ${data.longestAge}`;
@@ -82,7 +82,10 @@ const Input: React.FC<inputProps> = ({
         onChange={onChange}
         readOnly={readOnly}
       />
-      <label className={`bmi-input-label ${errClassLabel}`} htmlFor='gender'>
+      <label
+        className={`bmi-input-label ${errClassLabel}`}
+        htmlFor={name.toLowerCase()}
+      >
         {name === 'gender' ? 'Gender' : errLabel}
       </label>
     </div>
