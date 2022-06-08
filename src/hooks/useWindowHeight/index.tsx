@@ -28,7 +28,7 @@ const useWindowHeight = () => {
     }
     window.addEventListener('resize', handleResize); // <-- I am only interested in window.innerWidth !
     return () => window.removeEventListener('resize', handleResize);
-  }, []); // Empty array ensures that effect is only run on mount and unmount
+  }, [windowSize]); // Empty array ensures that effect is only run on mount and unmount
 
   return windowSize;
 };
