@@ -1,4 +1,4 @@
-import { BaseSyntheticEvent, SetStateAction, useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 // COMPONENTS
 import Hero from './components/Hero';
@@ -15,7 +15,6 @@ import {
 } from './handlers';
 
 // HELPER FUNCTIONS
-import { transformString } from './utils/TransformStr';
 import { data } from './data/staticData';
 
 const App = () => {
@@ -25,6 +24,44 @@ const App = () => {
   const [weight, setWeight] = useState<number>(60.5);
   const [height, setHeight] = useState<number>(1.72);
   const [bmi, setBmi] = useState<number>(0);
+
+  //
+
+  // Hook
+  const useWindowSize = () => {
+    const isClient = typeof window === 'object'; //Object represents browser window
+    const lastHeight = useRef();
+
+    function getSize() {
+      return {
+        height: isClient ? window.innerHeight : null,
+      };
+    }
+
+    const [windowSize, setWindowSize] = useState(getSize);
+
+    useEffect((): any => {
+      if (!isClient) {
+        return false;
+      } //Exit if not user/browser
+
+      function handleResize() {
+        if (window?.innerHeight !== lastHeight.current) {
+          const clientHeight = getSize();
+
+          //lastHeight.current = clientHeight;
+
+          setWindowSize(clientHeight);
+        }
+      }
+      window.addEventListener('resize', handleResize); // <-- I am only interested in window.innerWidth !
+      return () => window.removeEventListener('resize', handleResize);
+    }, []); // Empty array ensures that effect is only run on mount and unmount
+
+    return windowSize;
+  };
+
+  console.log(useWindowSize());
 
   // BMI FORMULA & VALIDATION
   const calculateBMI = () => {
@@ -47,10 +84,11 @@ const App = () => {
     calculateBMI();
   }, [weight, height, age]);
 
+  // console.log(browserVH);
   // APP JSX
 
   return (
-    <Hero gender={gender}>
+    <Hero gender={gender} browserVH={useWindowSize().height}>
       <Header />
       <Form>
         <Input

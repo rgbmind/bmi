@@ -3,10 +3,11 @@ import './style.scss';
 // INTERFACES
 interface heroProps {
   gender: string;
+  browserVH: string | number;
   children: React.ReactNode;
 }
 
-const Hero: React.FC<heroProps> = ({ gender, children }) => {
+const Hero: React.FC<heroProps> = ({ gender, browserVH, children }) => {
   // Hero image toggle based on gender type
 
   let genderHeroClass = 'hero';
@@ -18,7 +19,11 @@ const Hero: React.FC<heroProps> = ({ gender, children }) => {
     genderHeroClass += ' hero--male';
   }
 
-  return <div className={genderHeroClass}>{children}</div>;
+  return (
+    <div style={{ height: browserVH }} className={genderHeroClass}>
+      {children}
+    </div>
+  );
 };
 
 export default Hero;
