@@ -29,23 +29,26 @@ html {
   @include respondMax($desktop-fhd) {
     font-size: 60%;
   }
+  @media (max-height: 52.8125em) {
+    font-size: 7px;
+  }
   @include respondMax($tab-land) {
     font-size: 45%;
   }
   @include respondMax($nest-hub) {
-    font-size: 30%;
+    font-size: 7.5px;
   }
   @include respondMax($tab-port) {
-    font-size: 30%;
+    font-size: 4px;
   }
   @include respondMax($phone) {
-    font-size: 20%;
+    font-size: 3.2px;
   }
   @include respondMax($phone-small) {
-    font-size: 18%;
+    font-size: 3.2px;
   }
   @include respondMax($phone-tiny) {
-    font-size: 16%;
+    font-size: 2.5px;
   }
   @include respondMax($samsung-fold) {
     font-size: 13%;

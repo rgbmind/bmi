@@ -6,12 +6,4 @@
   justify-content: center;
   gap: 2rem;
   margin-bottom: 5rem;
-
-  @include respondMax($tab-port) {
-    margin-bottom: 15rem;
-  }
-
-  @include respondMax($phone) {
-    margin-bottom: 25rem;
-  }
 }

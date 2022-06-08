@@ -13,6 +13,10 @@
   -webkit-transition: background-image 0.3s;
   transition: background-image 0.3s;
 
+  @media (max-height: 52.8125em) {
+    background-position: 50% 50%;
+  }
+
   &--female {
     background-image: linear-gradient(
         to bottom,
