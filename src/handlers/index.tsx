@@ -6,12 +6,13 @@ import { transformString } from '../utils/TransformStr';
 
 export const onGenderClick = (
   event: BaseSyntheticEvent,
+  gender: string,
   f: React.Dispatch<SetStateAction<string>>
 ) => {
-  if (event.target.value === 'female') {
+  if (gender === 'female') {
     f('male');
   }
-  if (event.target.value === 'male') {
+  if (gender === 'male') {
     f('female');
   }
 };
@@ -35,7 +36,7 @@ export const onAgeChange = (
 };
 
 export const onWeightAndHeightChange = (
-  event: BaseSyntheticEvent,
+  event: any,
   f: React.Dispatch<SetStateAction<number>>
 ) => {
   f(transformString(event.target.value));

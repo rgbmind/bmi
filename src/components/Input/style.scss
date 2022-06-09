@@ -4,28 +4,27 @@
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
+  gap: 1rem;
   justify-content: center;
-  gap: 0.8rem;
-  height: 20rem;
-  width: 20rem;
+  height: 40rem;
+  width: 40rem;
   border-radius: 50%;
   border: 1.2rem solid $color-accent;
   text-align: center;
-  background-color: $color-white;
+  background-color: tint-or-shade($color-accent, 0.9, tint);
 }
 
 .bmi-input {
-  font-size: 3.2rem;
-  width: 12rem;
+  font-size: 8rem;
+  width: 24rem;
   border-radius: 0.8rem;
   border: 1px solid $color-accent;
   text-align: center;
-  padding: 0.4rem;
+  //margin: 1rem 0;
 
   &-label {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     letter-spacing: 1.2;
-    color: tint-or-shade($color-grey, 0.8);
 
     &--red {
       color: $color-red;
@@ -34,12 +33,29 @@
 
   &:focus,
   &:hover {
-    background-color: rgb($color-primary, 0.08);
+    background-color: tint-or-shade($color-primary, 0.99, tint);
     border: 1px solid $color-primary;
+    color: tint-or-shade($color-primary, 1, shade);
   }
 
   &--red {
     border: 1px solid $color-red;
     color: $color-red;
   }
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border-radius: 50%;
+  height: 2.4rem;
+  width: 2.4rem;
+  padding: 2rem;
+  font-size: 3rem;
+
+  color: $color-white;
+  background-color: $color-accent;
+  cursor: pointer;
 }

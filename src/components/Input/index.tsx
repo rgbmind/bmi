@@ -14,6 +14,7 @@ interface inputProps {
   onClick?: React.ReactEventHandler;
   onChange?: React.ReactEventHandler;
   readOnly?: boolean;
+  setDisplayInput: any;
 }
 
 const Input: React.FC<inputProps> = ({
@@ -21,9 +22,9 @@ const Input: React.FC<inputProps> = ({
   length,
   bottomLabel,
   value,
-  onClick,
   onChange,
   readOnly,
+  setDisplayInput,
 }) => {
   // INPUT ERROR HANDLING
 
@@ -64,8 +65,21 @@ const Input: React.FC<inputProps> = ({
     }
   }
 
+  //reset inputs
+  const returnMainScreen = () => {
+    setDisplayInput({
+      age: false,
+      weight: false,
+      height: false,
+      bmi: true,
+    });
+  };
+
   return (
     <div className={`input-container ${errClassLabel}`}>
+      <div onClick={returnMainScreen} className='back'>
+        &larr;
+      </div>
       <label
         className={`bmi-input-label ${errClassLabel}`}
         htmlFor={name.toLowerCase()}
@@ -78,7 +92,6 @@ const Input: React.FC<inputProps> = ({
         value={value}
         type='text'
         maxLength={length}
-        onClick={onClick}
         onChange={onChange}
         readOnly={readOnly}
       />

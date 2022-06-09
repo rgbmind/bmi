@@ -1,0 +1,33 @@
+@use '../../scss/colors' as *;
+
+.btn-container {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  background-color: $color-accent;
+  padding: 2rem;
+  cursor: pointer;
+}
+
+.icon {
+  fill: $color-white;
+}
+
+.btn-label {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $color-white;
+  user-select: none;
+}
