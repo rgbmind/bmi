@@ -104,6 +104,10 @@ const Input: React.FC<inputProps> = ({
         maxLength={length}
         onChange={onChange}
         readOnly={readOnly}
+        onKeyDown={(event) => {
+          event.preventDefault();
+          saveAndReturn();
+        }}
       />
       <label
         className={`bmi-input-label ${errClassLabel}`}
