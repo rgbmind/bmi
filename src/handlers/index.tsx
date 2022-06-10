@@ -41,3 +41,30 @@ export const onWeightAndHeightChange = (
 ) => {
   f(transformString(event.target.value));
 };
+
+// BUTTON CLICK HANDLER
+
+export const clickButton = (name: string, value: object, f: any) => {
+  let object = { ...value };
+
+  const objKeys = Object.keys(object);
+  const objValues = Object.keys(object);
+
+  if (value[name] === false) {
+    for (let i = 0; i < objKeys.length; i++) {
+      if (objKeys[i] === name) {
+        object[name] = true;
+      }
+      if (objKeys[i] !== name) {
+        object[objKeys[i]] = false;
+      }
+    }
+  }
+
+  if (value[name] === true) {
+    object[name] = false;
+    object['bmi'] = true;
+  }
+
+  f(object);
+};

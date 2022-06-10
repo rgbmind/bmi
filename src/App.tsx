@@ -16,6 +16,7 @@ import {
   onGenderClick,
   onAgeChange,
   onWeightAndHeightChange,
+  clickButton,
 } from './handlers';
 
 // HELPER FUNCTIONS
@@ -56,66 +57,6 @@ const App = () => {
     calculateBMI();
   }, [weight, height, age]);
 
-  console.log(inputDisplay);
-
-  // BUTTON CLICK HANDLER
-
-  const clickButtonAge = () => {
-    if (inputDisplay.age === false) {
-      setInputDisplay((prevState: any) => ({
-        ...prevState,
-        age: true,
-        bmi: false,
-        weight: false,
-        height: false,
-      }));
-    }
-    if (inputDisplay.age === true) {
-      setInputDisplay((prevState: any) => ({
-        ...prevState,
-        age: false,
-        bmi: true,
-      }));
-    }
-  };
-  const clickButtonWeight = () => {
-    if (inputDisplay.weight === false) {
-      setInputDisplay((prevState: any) => ({
-        ...prevState,
-        weight: true,
-        bmi: false,
-        age: false,
-        height: false,
-      }));
-    }
-    if (inputDisplay.weight === true) {
-      setInputDisplay((prevState: any) => ({
-        ...prevState,
-        weight: false,
-        bmi: true,
-      }));
-    }
-  };
-
-  const clickButtonHeight = () => {
-    if (inputDisplay.height === false) {
-      setInputDisplay((prevState: any) => ({
-        ...prevState,
-        height: true,
-        bmi: false,
-        age: false,
-        weight: false,
-      }));
-    }
-    if (inputDisplay.height === true) {
-      setInputDisplay((prevState: any) => ({
-        ...prevState,
-        height: false,
-        bmi: true,
-      }));
-    }
-  };
-
   // APP JSX
 
   return (
@@ -128,12 +69,15 @@ const App = () => {
           value={gender}
           onClick={(event) => onGenderClick(event, gender, setGender)}
         />
-        <IconButton icon='age' label='Age' onClick={clickButtonAge} />
+        <IconButton
+          icon='age'
+          label='Age'
+          onClick={() => clickButton('age', inputDisplay, setInputDisplay)}
+        />
         {inputDisplay.age ? (
           <Input
             name='age'
             length={3}
-            bottomLabel='years'
             value={age}
             onChange={(event) => onAgeChange(event, setAge)}
             setDisplayInput={setInputDisplay}
@@ -145,7 +89,6 @@ const App = () => {
           <Input
             name='weight'
             length={5}
-            bottomLabel='kg'
             value={weight}
             onChange={(event) => onWeightAndHeightChange(event, setWeight)}
             readOnly={false}
@@ -156,15 +99,22 @@ const App = () => {
           <Input
             name='height'
             length={4}
-            bottomLabel='m'
             value={height}
             onChange={(event) => onWeightAndHeightChange(event, setHeight)}
             readOnly={false}
             setDisplayInput={setInputDisplay}
           />
         ) : null}
-        <IconButton icon='weight' label='Weight' onClick={clickButtonWeight} />
-        <IconButton icon='height' label='Height' onClick={clickButtonHeight} />
+        <IconButton
+          icon='weight'
+          label='Weight'
+          onClick={() => clickButton('weight', inputDisplay, setInputDisplay)}
+        />
+        <IconButton
+          icon='height'
+          label='Height'
+          onClick={() => clickButton('height', inputDisplay, setInputDisplay)}
+        />
       </Form>
     </Hero>
   );

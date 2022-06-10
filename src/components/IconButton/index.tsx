@@ -1,84 +1,24 @@
 import React from 'react';
 import './style.scss';
-
-const icons = {
-  woman: (
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      className='icon'
-      viewBox='0 0 512 512'
-    >
-      <title>Woman</title>
-      <circle cx='255.75' cy='56' r='56' />
-      <path d='M394.63 277.9l-10.33-34.41v-.11l-22.46-74.86h-.05l-2.51-8.45a44.87 44.87 0 00-43-32.08h-120a44.84 44.84 0 00-43 32.08l-2.51 8.45h-.06l-22.46 74.86v.11l-10.37 34.41c-3.12 10.39 2.3 21.66 12.57 25.14a20 20 0 0025.6-13.18l25.58-85.25 2.17-7.23a8 8 0 0115.53 2.62 7.78 7.78 0 01-.17 1.61L155.43 347.4a16 16 0 0015.32 20.6h29v114.69c0 16.46 10.53 29.31 24 29.31s24-12.85 24-29.31V368h16v114.69c0 16.46 10.53 29.31 24 29.31s24-12.85 24-29.31V368h30a16 16 0 0015.33-20.6l-43.74-145.81a7.52 7.52 0 01-.16-1.59 8 8 0 0115.54-2.63l2.17 7.23 25.57 85.25A20 20 0 00382.05 303c10.27-3.44 15.69-14.71 12.58-25.1z' />
-    </svg>
-  ),
-  man: (
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      className='icon'
-      viewBox='0 0 512 512'
-    >
-      <title>Man</title>
-      <circle cx='256' cy='56' r='56' />
-      <path d='M304 128h-96a64.19 64.19 0 00-64 64v107.52c0 10.85 8.43 20.08 19.27 20.47A20 20 0 00184 300v-99.73a8.18 8.18 0 017.47-8.25 8 8 0 018.53 8V489a23 23 0 0023 23 23 23 0 0023-23V346.34a10.24 10.24 0 019.33-10.34A10 10 0 01266 346v143a23 23 0 0023 23 23 23 0 0023-23V200.27a8.18 8.18 0 017.47-8.25 8 8 0 018.53 8v99.52c0 10.85 8.43 20.08 19.27 20.47A20 20 0 00368 300V192a64.19 64.19 0 00-64-64z' />
-    </svg>
-  ),
-
-  age: (
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      className='icon'
-      viewBox='0 0 512 512'
-    >
-      <title>Hourglass</title>
-      <path d='M415.7 427.13c-8.74-76.89-43.83-108.76-69.46-132C328.52 279 320 270.61 320 256c0-14.41 8.49-22.64 26.16-38.44 25.93-23.17 61.44-54.91 69.56-132.84a47 47 0 00-12-36.26A50.3 50.3 0 00366.39 32H145.61a50.34 50.34 0 00-37.39 16.46 47.05 47.05 0 00-11.94 36.26c8.09 77.68 43.47 109.19 69.3 132.19C183.42 232.8 192 241.09 192 256c0 15.1-8.6 23.56-26.5 39.75-25.5 23.1-60.5 54.73-69.2 131.38a46.59 46.59 0 0011.7 36.2A50.44 50.44 0 00145.61 480h220.78A50.44 50.44 0 00404 463.33a46.59 46.59 0 0011.7-36.2zM343.3 432H169.13c-15.6 0-20-18-9.06-29.16C186.55 376 240 356.78 240 326V224c0-19.85-38-35-61.51-67.2-3.88-5.31-3.49-12.8 6.37-12.8h142.73c8.41 0 10.22 7.43 6.4 12.75C310.82 189 272 204.05 272 224v102c0 30.53 55.71 47 80.4 76.87 9.95 12.04 6.47 29.13-9.1 29.13z' />
-    </svg>
-  ),
-  weight: (
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      className='icon'
-      viewBox='0 0 512 512'
-    >
-      <title>Barbell</title>
-      <path d='M467 176a29.94 29.94 0 00-25.32 12.5 2 2 0 01-3.64-1.14v-36.65c0-20.75-16.34-38.21-37.08-38.7A38 38 0 00362 150v82a2 2 0 01-2 2H152a2 2 0 01-2-2v-81.29c0-20.75-16.34-38.21-37.08-38.7A38 38 0 0074 150v37.38a2 2 0 01-3.64 1.14A29.94 29.94 0 0045 176c-16.3.51-29 14.31-29 30.62v98.72c0 16.31 12.74 30.11 29 30.62a29.94 29.94 0 0025.32-12.5 2 2 0 013.68 1.16v36.67C74 382 90.34 399.5 111.08 400A38 38 0 00150 362v-82a2 2 0 012-2h208a2 2 0 012 2v81.29c0 20.75 16.34 38.21 37.08 38.7A38 38 0 00438 362v-37.38a2 2 0 013.64-1.14A29.94 29.94 0 00467 336c16.3-.51 29-14.31 29-30.62v-98.74c0-16.31-12.74-30.11-29-30.64z' />
-    </svg>
-  ),
-  height: (
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      className='icon'
-      viewBox='0 0 512 512'
-    >
-      <title>Caret Up</title>
-      <path d='M414 321.94L274.22 158.82a24 24 0 00-36.44 0L98 321.94c-13.34 15.57-2.28 39.62 18.22 39.62h279.6c20.5 0 31.56-24.05 18.18-39.62z' />
-    </svg>
-  ),
-};
+import icons from '../../icons/icons';
 
 // INTERFACES
 interface inputProps {
-  icon: 'woman' | 'age' | 'weight' | 'height';
-  label: 'Gender' | 'Age' | 'Weight' | 'Height';
+  icon: 'woman' | 'age' | 'weight' | 'height' | 'checkmark';
+  label?: 'Gender' | 'Age' | 'Weight' | 'Height';
   value?: string | number;
   onClick?: React.ReactEventHandler;
 }
 
-const GenderButton: React.FC<inputProps> = ({
-  icon,
-  label,
-  value,
-  onClick,
-}) => {
+const IconButton: React.FC<inputProps> = ({ icon, label, value, onClick }) => {
   let selectedIcon: any = {};
 
   if (value === 'female') {
-    selectedIcon = icons[icon];
+    selectedIcon = icons('woman', 'icon');
   } else if (value === 'male') {
-    selectedIcon = icons.man;
+    selectedIcon = icons('man', 'icon');
   } else {
-    selectedIcon = icons[icon];
+    selectedIcon = icons(icon, 'icon');
   }
 
   return (
@@ -86,9 +26,9 @@ const GenderButton: React.FC<inputProps> = ({
       <div className='btn' onClick={onClick}>
         {selectedIcon}
       </div>
-      <p className='btn-label'>{label}</p>
+      {label ? <p className='btn-label'>{label}</p> : null}
     </div>
   );
 };
 
-export default GenderButton;
+export default IconButton;
