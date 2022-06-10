@@ -105,8 +105,9 @@ const Input: React.FC<inputProps> = ({
         onChange={onChange}
         readOnly={readOnly}
         onKeyDown={(event) => {
-          event.preventDefault();
-          saveAndReturn();
+          if (event.key === 'Enter') {
+            event.preventDefault();
+          }
         }}
       />
       <label
