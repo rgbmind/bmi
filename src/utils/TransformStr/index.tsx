@@ -1,5 +1,5 @@
 // String validation & automated user error handling
-export const transformString = (value: string | any) => {
+const transformString = (value: string | any) => {
   const arr = value
     .replace(/[,]/gim, '.')
     .replace(/([^0-9.])/gim, '')
@@ -26,3 +26,5 @@ export const transformString = (value: string | any) => {
 
   return str.replace(/^0[1-9]/, str.slice(1));
 };
+
+export default transformString;

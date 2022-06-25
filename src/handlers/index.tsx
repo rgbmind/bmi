@@ -3,7 +3,7 @@ import { BaseSyntheticEvent, ReactEventHandler, SetStateAction } from 'react';
 
 import { userActions } from '../reducers';
 
-import { transformString } from '../utils/transformStr';
+import transformString from '../utils/transformStr';
 
 // EVENT HANDLERS
 
