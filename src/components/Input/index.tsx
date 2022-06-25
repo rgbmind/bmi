@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { userActions } from '../../reducers';
-import capitalize from '../../utils/capitalizeStr';
+import capitalize from '../../utils/CapitalizeStr';
 import icons from '../../icons/icons';
 import './style.scss';
 
