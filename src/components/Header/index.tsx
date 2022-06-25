@@ -7,7 +7,7 @@ const logo: string = logo_url.toString();
 const Header = () => {
   return (
     <header className='hero-main-heading-container'>
-      <img src={logo} className='logo' />
+      <img src={logo} className='logo' alt='bmi plus calculator logo' />
       <h1 className='hero-main-heading'>Calculator</h1>
     </header>
   );
