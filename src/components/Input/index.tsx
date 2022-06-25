@@ -42,8 +42,8 @@ const Input: React.FC<inputProps> = ({
 
   // Age range
   if (name === 'age') {
-    if (value > data.longestAge || value < 2) {
-      errLabel = `2 - ${data.longestAge}`;
+    if (value > data.longestAge || value < 21) {
+      errLabel = `21 - ${data.longestAge}`;
       errClassInput += 'bmi-input--red';
       errClassLabel += 'bmi-input-label--red';
       iconClass = 'icon-reject';
