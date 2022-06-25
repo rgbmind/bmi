@@ -1,26 +1,13 @@
 // EVENT HANDLERS
 import { BaseSyntheticEvent, ReactEventHandler, SetStateAction } from 'react';
-import { transformString } from '../utils/TransformStr';
+
+import { userActions } from '../reducers';
+
+import { transformString } from '../utils/transformStr';
 
 // EVENT HANDLERS
 
-export const onGenderClick = (
-  event: BaseSyntheticEvent,
-  gender: string,
-  f: React.Dispatch<SetStateAction<string>>
-) => {
-  if (gender === 'female') {
-    f('male');
-  }
-  if (gender === 'male') {
-    f('female');
-  }
-};
-
-export const onAgeChange = (
-  event: BaseSyntheticEvent,
-  f: React.Dispatch<SetStateAction<number>>
-) => {
+export const onAgeChange = (event: BaseSyntheticEvent, f: any) => {
   // Clean input string
   const inputString = event.target.value
     .replace(/[^0-9]/gim, '') // remove any non-numeric values
@@ -32,39 +19,30 @@ export const onAgeChange = (
     inputString.slice(1)
   );
 
-  f(removeZeroBeforeNumber);
+  f(userActions.changeAgeInput(removeZeroBeforeNumber));
+  f(userActions.calculateBmi());
 };
 
-export const onWeightAndHeightChange = (
-  event: any,
-  f: React.Dispatch<SetStateAction<number>>
-) => {
-  f(transformString(event.target.value));
+export const onWeightChange = (event: any, f: any) => {
+  f(userActions.changeWeightInput(transformString(event.target.value)));
+  f(userActions.calculateBmi());
+};
+export const onHeightChange = (event: any, f: any) => {
+  f(userActions.changeHeightInput(transformString(event.target.value)));
+  f(userActions.calculateBmi());
 };
 
 // BUTTON CLICK HANDLER
 
-export const clickButton = (name: string, value: object, f: any) => {
-  let object = { ...value };
-
-  const objKeys = Object.keys(object);
-  const objValues = Object.keys(object);
-
-  if (value[name] === false) {
-    for (let i = 0; i < objKeys.length; i++) {
-      if (objKeys[i] === name) {
-        object[name] = true;
-      }
-      if (objKeys[i] !== name) {
-        object[objKeys[i]] = false;
-      }
-    }
-  }
-
-  if (value[name] === true) {
-    object[name] = false;
-    object['bmi'] = true;
-  }
-
-  f(object);
+export const onGenderButtonClick = (f: any) => {
+  f(userActions.clickGenderButton());
+};
+export const onAgeButtonClick = (f: any) => {
+  f(userActions.clickAgeButton());
+};
+export const onWeightButtonClick = (f: any) => {
+  f(userActions.clickWeightButton());
+};
+export const onHeightButtonClick = (f: any) => {
+  f(userActions.clickHeightButton());
 };

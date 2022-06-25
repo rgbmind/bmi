@@ -1,5 +1,6 @@
-import React from 'react';
-import capitalize from '../../utils/CapitalizeStr';
+import { useSelector, useDispatch } from 'react-redux';
+import { userActions } from '../../reducers';
+import capitalize from '../../utils/capitalizeStr';
 import icons from '../../icons/icons';
 import './style.scss';
 
@@ -14,7 +15,7 @@ interface inputProps {
   onClick?: React.ReactEventHandler;
   onChange?: React.ReactEventHandler;
   readOnly?: boolean;
-  setDisplayInput: any;
+  //setDisplayInput: any;
 }
 
 const Input: React.FC<inputProps> = ({
@@ -23,8 +24,14 @@ const Input: React.FC<inputProps> = ({
   value,
   onChange,
   readOnly,
-  setDisplayInput,
+  //setDisplayInput,
 }) => {
+  // STATE
+  const { age, weight, height, bmi } = useSelector(
+    (state: any) => state.componentsDisplay
+  );
+  const dispatch = useDispatch();
+
   // INPUT ERROR HANDLING
 
   let errLabel = '';
@@ -79,13 +86,8 @@ const Input: React.FC<inputProps> = ({
   }
 
   //Save data and return to main screen
-  const saveAndReturn = () => {
-    setDisplayInput({
-      age: false,
-      weight: false,
-      height: false,
-      bmi: true,
-    });
+  const saveAndReturn: any = () => {
+    dispatch(userActions.saveAndClose());
   };
 
   return (
